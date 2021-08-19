@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import Form from "./Form";
 import "./App.css";
 
+const initialFormValues = {
+  name: "",
+  email: "",
+  role: "",
+};
+
 function App() {
-  const [members, setMembers] = useState([]);
   return (
     <div className="App">
       <h2>Team Member List</h2>
-      {members.map((member, idx) => {
-        return <p key={idx}>{member.name}</p>;
+      {members.map((member, id) => {
+        return <p key={id}>{member.name}</p>;
       })}
       <Form />
     </div>
